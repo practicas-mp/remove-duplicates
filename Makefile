@@ -11,10 +11,14 @@ DOC = ./doc
 all: bin/genera-duplicados
 
 bin/genera-duplicados: src/util/genera-duplicados.cpp
-	$(CC) $(CPPFLAGS) src/util/genera-duplicados.cpp -o bin/genera-duplicados
+	$(CC) $(CPPFLAGS) src/util/genera-duplicados.cpp -o $@
 
 bin/naive: src/naive.cpp src/util/measure.h
-	$(CC) $(CPPFLAGS) src/naive.cpp -o bin/naive
+	$(CC) $(CPPFLAGS) src/naive.cpp -o $@
+
+bin/see-measure-input: src/see-measure-input.cpp src/util/measure.h
+	$(CC) $(CPPFLAGS) src/see-measure-input.cpp -o $@
+
 
 doc:
 	doxygen $(DOC)/doxys/Doxyfile
