@@ -10,8 +10,11 @@ DOC = ./doc
 
 all: bin/genera-duplicados
 
-bin/genera-duplicados: src/genera-duplicados.cpp
-	$(CC) $(CPPFLAGS) src/genera-duplicados.cpp -o bin/genera-duplicados
+bin/genera-duplicados: src/util/genera-duplicados.cpp
+	$(CC) $(CPPFLAGS) src/util/genera-duplicados.cpp -o bin/genera-duplicados
+
+bin/naive: src/naive.cpp src/util/measure.h
+	$(CC) $(CPPFLAGS) src/naive.cpp -o bin/naive
 
 doc:
 	doxygen $(DOC)/doxys/Doxyfile
