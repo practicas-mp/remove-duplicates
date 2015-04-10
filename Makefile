@@ -20,8 +20,11 @@ bin/see-measure-input: src/see-measure-input.cpp src/util/measure.h
 	$(CC) $(CPPFLAGS) src/see-measure-input.cpp -o $@
 
 
-doc:
-	doxygen $(DOC)/doxys/Doxyfile
+
+
+
+measure-naive: bin/naive
+	python scripts/executer.py bin/naive > data/naive.txt
 
 clean:
 	rm -f $(OBJ)/*
