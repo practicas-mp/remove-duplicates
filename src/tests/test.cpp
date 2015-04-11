@@ -25,7 +25,5 @@ int main(int argc, char **argv){
 
 	cout << endl;
 	printVector(numeros2);
-	printVector(removeDuplicates(numeros2));
-
-	
+	printVector(removeDuplicates(numeros2));	
 }
