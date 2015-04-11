@@ -13,10 +13,10 @@ all: bin/genera-duplicados
 bin/genera-duplicados: src/util/genera-duplicados.cpp
 	$(CC) $(CPPFLAGS) src/util/genera-duplicados.cpp -o $@
 
-bin/naive: src/naive.cpp src/util/measure.h
+bin/naive: src/naive.cpp src/util/measure.h src/algorithms/naive.cpp
 	$(CC) $(CPPFLAGS) src/naive.cpp -o $@
 
-bin/linear: src/linear.cpp src/util/measure.h
+bin/linear: src/linear.cpp src/util/measure.h src/algorithms/linear.cpp
 	$(CC) $(CPPFLAGS) src/linear.cpp -o $@
 
 bin/see-measure-input: src/see-measure-input.cpp src/util/measure.h
@@ -33,6 +33,10 @@ measure-naive: bin/naive
 measure-linear: bin/linear
 	python scripts/executer.py bin/linear > data/linear.txt
 	scripts/graph.sh data/linear.txt data/images/linear.png "Linear algorithm"
+
+
+bin/test: src/tests/test.cpp bin/naive bin/linear 
+	$(CC) $(CPPFLAGS) src/tests/test.cpp -o $@	
 
 clean:
 	rm -f $(OBJ)/*

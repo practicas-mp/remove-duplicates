@@ -1,3 +1,6 @@
+#ifndef __MEASURE_H__
+#define __MEASURE_H__
+
 #include <vector>
 #include <chrono>
 #include <ctime>
@@ -37,3 +40,5 @@ namespace measure {
 	}
 
 }
+
+#endif
