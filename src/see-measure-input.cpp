@@ -1,6 +1,6 @@
+#include <cassert>
 #include <iostream>
 #include "util/measure.h"
-#include <cassert>
 
 using namespace std;
 

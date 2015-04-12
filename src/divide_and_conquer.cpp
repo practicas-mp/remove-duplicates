@@ -1,6 +1,12 @@
+#include <algorithm>
 #include <iostream>
+#include <vector>
+
 #include "util/measure.h"
 #include "algorithms/divide_and_conquer.cpp"
+
+using namespace std;
+
 
 int main(int argc, char **argv){
 

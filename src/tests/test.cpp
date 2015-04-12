@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "algorithms/naive.cpp"
+#include "algorithms/divide_and_conquer.cpp"
 
 using namespace std;
 
