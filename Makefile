@@ -34,6 +34,8 @@ bin/see-measure-input: src/see-measure-input.cpp src/util/measure.h
 
 measure: $(ALGS)
 	for f in $^; do python scripts/executer.py bin/$$f > data/$$f.txt; scripts/graph.sh data/$$f.txt data/images/$$f.png "$$f algorithm"; done
+	all=$(ls data/*.txt)
+	scripts/graph.sh "$all" data/images/all.png
 
 
 # measure-naive: bin/naive

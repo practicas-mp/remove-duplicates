@@ -11,5 +11,7 @@ set output "$OUTPUT_IMAGE"
 set xlabel "Input size"
 set ylabel "Time (ms)"
 
-plot "$DATA_FILE" with lines title "$GRAPHIC_NAME"
+filenames = '$DATA_FILE'
+
+plot for [f in filenames] f with lines title f
 EOF
